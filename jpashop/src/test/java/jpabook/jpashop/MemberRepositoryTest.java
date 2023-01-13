@@ -1,5 +1,7 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -9,13 +11,12 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @RunWith(SpringRunner.class) //스프링 관련된 것으로 테스트를 할 거야 라고 알려줌.
 @SpringBootTest //스프링 부트로 테스트를 돌려야 하기 때문
 class MemberRepositoryTest {
 
-    @Autowired MemberRepository memberRepository;
+    @Autowired
+    MemberRepository memberRepository;
 
     @Test
     @Transactional //없으면 No EntityManager with actual transaction available for current thread 발생
