@@ -25,6 +25,6 @@ public abstract class Item { //구현체를 가질 것이기 때문에 추상 �
     private int price;
     private int stockQuantity;
 
-
+    @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 }
