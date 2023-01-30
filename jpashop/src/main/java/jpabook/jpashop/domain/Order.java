@@ -32,7 +32,7 @@ public class Order {
 
     //persist(order) 만으로 해결할 수 있게해주는 기능 (cascade)
 
-    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL))
+    @OneToOne(cascade = CascadeType.ALL, fetch = LAZY)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
