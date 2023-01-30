@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test #h2database.com - cheatsheet - In-memory 의 경로 복사 한 것: 인메모리 모드로 동작하도록 함
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create #자동으로 테이블을 만들어주는 모드 #springboot는 기본으로 create-drop으로 동작
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+
+#또는 spring 아래의 모든 설정들을 주석 처리 해도 알아서 spring이 메모리 모드로 동작하도록 한다
+
+logging:
+  level:
+    org.hibernate.SQL: debug #하이버네이트가 생성하는 모든 SQL이 모두 남겨진다
+    org.hibernate.type: trace
