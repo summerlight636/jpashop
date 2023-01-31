@@ -30,7 +30,11 @@ public class OrderItem {
     private int orderPrice; //주문 가격
     private int count; //주문 수량
 
-    //==생성 메서드==// //마치 생성자 처럼... 객체 만들어서 set으로 값 넣어주고
+    //이거 대신 롬복 기능인 @NoArgsConstructor(access = AccessLevel.PROTECTED) 이용할 수도 있다. 똑같은 의미 !
+    protected OrderItem() {
+    }
+
+    //==생성 메서드==// //마치 생성자 처럼... 객체 만들어서 set으로 값 넣어주고 //이 외의 생성 방식을 막기 위해서 protected 생성자 만들어 둠 (생성자 쓰지 말라는 의미로)
     public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
