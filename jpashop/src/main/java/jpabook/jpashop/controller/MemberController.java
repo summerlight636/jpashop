@@ -48,7 +48,7 @@ public class MemberController {
         List<Member> members = memberService.findMembers(); //API를 만들 때에는 이유를 불문하고 엔티티를 넘기면 안 된다.
         //password가 그대로 노출되는 문제
         //API 스펙이 변해버린다. 엔티티에 로직을 추가했는데 그것 때문에 API 스펙이 변해버린다. (?) 결과적으로 불안정한 API 스펙이 되어버린다.
-        model.addAttribute("members", members); //이것도 form 객체를 따로 만들거나 DTO를 만드는 것이 더 현명한 것 ㅇ
+        model.addAttribute("members", members); //이것도 form 객체를 따로 만들거나 DTO를 만드는 것이 더 현명한 것
         return "members/memberList";
     }
 }
